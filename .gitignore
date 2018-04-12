@@ -2,3 +2,7 @@
 chatClient/\.idea/
 
 chatClient/package-lock\.json
+
+chat-Rest-Express-MYSQL/\.idea/
+
+chat-Rest-Express-MYSQL/package-lock\.json
