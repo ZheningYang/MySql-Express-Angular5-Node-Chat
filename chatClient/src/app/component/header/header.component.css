@@ -1,0 +1,23 @@
+.navbar-brand{
+    letter-spacing: 3px;
+    font-weight: 400;
+    font-size: 20px;
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: transparent;
+    text-decoration: none;
+    float: left;
+    height: 50px;
+    padding: 15px 220px;
+    line-height: 20px;
+}
+
+.container{
+    height: 6vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.945);
+    margin: 0px;
+    padding: 0px;
+    z-index: 10000;
+}

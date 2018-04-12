@@ -1,0 +1,17 @@
+.copyright {
+  height: 4vh;
+  font: 400 12px/1.8 "Open Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: rgba(0, 0, 0, 0.945);
+  margin: 0px;
+  padding-left: 200px;
+  z-index: 10000;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.musclR {
+  color: rgba(211, 206, 206, 0.753);
+  text-decoration: none;
+}

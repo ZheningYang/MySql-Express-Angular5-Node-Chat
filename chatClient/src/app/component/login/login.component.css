@@ -1,0 +1,75 @@
+
+form {
+  height: 100%;
+}
+
+.all {
+  height: 90vh;
+  margin: 0px;
+  background-image: url(/assets/images/build-muscles.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login {
+  border-radius: 10px;
+  position: absolute;
+  height: 260px;
+  width: 400px;
+  background-color: rgba(252, 249, 249, 0.452);
+  top: 35%;
+  left: 38%;
+
+}
+
+.globalPasswordPseudo {
+  height: 120px;
+  width: 300px;
+  margin-top: 3%;
+  margin-left: 12.5%;
+  padding-top: 45px;
+
+}
+
+.userType {
+  height: 45px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.passwordType {
+  height: 45px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.connection {
+  overflow: hidden;
+}
+
+.divButton {
+  float: left;
+}
+
+.register {
+  font-size: 12px;
+  padding-left: 20px;
+  padding-top: 15px;
+  color: black;
+  overflow: hidden;
+}
+
+.inputPasswordAndUser {
+  width: 100%;
+}
+
+.loginButton {
+  background-color: rgba(17, 17, 17, 0.8);
+  font-weight: bold;
+  color: white;
+}
+
+.linkSave {
+  color: black;
+}

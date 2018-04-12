@@ -1,0 +1,35 @@
+<form (ngSubmit)="login()" method="post" class="all">
+  <div>
+    <div class="login">
+      <div class="globalPasswordPseudo">
+        <div class="userType">
+          <mat-form-field class="inputPasswordAndUser">
+            <input matInput id="username" type="text" name="username" placeholder="Nom d'utilisateur"
+                   [(ngModel)]="username">
+          </mat-form-field>
+        </div>
+        <br/>
+        <div class="passwordType">
+          <mat-form-field class="inputPasswordAndUser">
+            <input matInput id="password" type="password" name="password" placeholder="Mot de passe"
+                   [(ngModel)]="password">
+          </mat-form-field>
+        </div>
+        <br/>
+        <br/>
+        <div class="connection">
+          <div class="divButton">
+            <button type="submit" class="mat-raised-button loginButton" mat-raised-button="">
+              <span class="mat-button-wrapper">Login</span>
+              <div class="mat-button-ripple mat-ripple" matripple=""></div>
+              <div class="mat-button-focus-overlay"></div>
+            </button>
+          </div>
+          <div class="register">
+            <a href="#" class="linkSave">Enregistrer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
