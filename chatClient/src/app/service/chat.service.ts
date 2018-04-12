@@ -6,7 +6,7 @@ import {Chat} from '../model/chat.model';
 
 @Injectable()
 export class ChatService {
-  private chatUrl = 'http://192.168.102.196:5000/chat/';
+  private chatUrl = 'http://localhost:5000/chat/';
 
   private friendSelected: User;
 

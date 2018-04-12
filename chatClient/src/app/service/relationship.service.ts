@@ -9,7 +9,7 @@ import {User} from '../model/user.model';
 
 @Injectable()
 export class RelationshipService {
-  private relationshipUrl = 'http://192.168.102.196:5000/relationship/';
+  private relationshipUrl = 'http://localhost:5000/relationship/';
 
   constructor(private http: HttpClient) {
   }

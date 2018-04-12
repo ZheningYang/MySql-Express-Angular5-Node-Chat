@@ -6,3 +6,7 @@ chatClient/package-lock\.json
 chat-Rest-Express-MYSQL/\.idea/
 
 chat-Rest-Express-MYSQL/package-lock\.json
+
+*/node_modules/
+
+*/out-tsc/

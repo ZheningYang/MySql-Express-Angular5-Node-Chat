@@ -5,7 +5,7 @@ import {User} from '../model/user.model';
 
 @Injectable()
 export class UserService {
-  private userUrl = 'http://192.168.102.196:5000/user/';
+  private userUrl = 'http://localhost:5000/user/';
 
   private userConnected: User;
 
