@@ -30,8 +30,8 @@ relationship.post('/acceptRequest', function (req, res, next) {
     });
 });
 
-relationship.get('/friendsList/:id', function (req, res, next) {
-    Dao.getFriendsListByUserId(req.params.id, function (err, rows) {
+relationship.get('/friendsList/:username', function (req, res, next) {
+    Dao.getFriendsListByUsername(req.params.username, function (err, rows) {
         if (err) {
             res.json(err);
         } else {

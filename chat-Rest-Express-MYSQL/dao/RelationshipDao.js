@@ -29,5 +29,25 @@ let Relationship = {
                     "AND status = 'accepted')", [id, id, id], callback);
     },
 
+    getFriendsListByUsername: function (username, callback) {
+        return db.query(
+            "SELECT DISTINCT " +
+                "u._id, u.username, u.email, u.password, u.image_path " +
+            "FROM " +
+            "relationship r " +
+                "INNER JOIN " +
+            "user u ON u.username IN (SELECT " +
+                "CASE " +
+                    "WHEN user_one_name <> ? " +
+                    "THEN user_one_name " +
+                    "ELSE user_two_name " +
+                "END " +
+            "FROM " +
+                "relationship r " +
+            "WHERE " +
+                "(user_one_name = ? OR user_two_name = ?) " +
+                    "AND status = 'accepted')", [username, username, username], callback);
+    },
+
 };
 module.exports = Relationship;

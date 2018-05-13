@@ -5,18 +5,18 @@ let Dao = require('../dao/ChatDao');
 let chat = express.Router();
 
 chat.post('/', function (req, res, next) {
-    let user_from_id = req.body.user_from_id;
-    let user_to_id = req.body.user_to_id;
+    let user_from_name = req.body.user_from_name;
+    let user_to_name = req.body.user_to_name;
     let message = req.body.message;
 
-    Dao.sendMessage(Number(user_from_id), Number(user_to_id), message, function (err, count) {
+    Dao.sendMessage(user_from_name, user_to_name, message, function (err, count) {
         if (err) {
             res.json(err);
         } else {
             res.json(req.body);
         }
     })
-})
+});
 
 chat.get('/:me/:friend', function (req, res, next) {
     Dao.getMessages(req.params.me, req.params.friend, function (err, rows) {
@@ -29,7 +29,7 @@ chat.get('/:me/:friend', function (req, res, next) {
 });
 
 chat.get('/:me', function (req, res, next) {
-    Dao.getLastMessagesByUserId(req.params.me, function (err, rows) {
+    Dao.getLastMessagesByUsername(req.params.me, function (err, rows) {
         if (err) {
             res.json(err);
         } else {

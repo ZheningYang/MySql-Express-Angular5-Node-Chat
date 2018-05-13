@@ -1,36 +1,36 @@
 let db = require('../dbconnection');
 
 let Chat = {
-    sendMessage: function (user_from_id, user_to_id, message, callback) {
-        return db.query("INSERT INTO chat (user_from_id, user_to_id, message, send_on) VALUES (?, ?, ?, ?)", [user_from_id, user_to_id, message, new Date()], callback);
+    sendMessage: function (user_from_name, user_to_name, message, callback) {
+        return db.query("INSERT INTO chat (user_from_name, user_to_name, message, send_on) VALUES (?, ?, ?, ?)", [user_from_name, user_to_name, message, new Date()], callback);
     },
     getMessages: function (me, friend, callback) {
         return db.query("SELECT * FROM chat " +
             "WHERE " +
-            "(user_from_id = ? AND user_to_id = ?) " +
+            "(user_from_name = ? AND user_to_name = ?) " +
             "OR " +
-            "(user_from_id = ? AND user_to_id = ?) " +
+            "(user_from_name = ? AND user_to_name = ?) " +
             "ORDER BY send_on asc", [me, friend, friend, me], callback);
     },
     getMessageById: function (id, callback) {
         return db.query("SELECT * FROM chat WHERE chat_id = ?", [id], callback);
     },
-    getLastMessagesByUserId: function (me, callback) {
+    getLastMessagesByUsername: function (me, callback) {
         return db.query("SELECT " +
             "temp.chat_id," +
-            "temp.user_from_id," +
-            "temp.user_to_id," +
+            "temp.user_from_name," +
+            "temp.user_to_name," +
             "temp.message," +
             "temp.send_on " +
             "FROM " +
             "(SELECT " +
             "CASE " +
-            "WHEN c.user_from_id <> ? THEN c.user_from_id " +
-            "ELSE c.user_to_id " +
+            "WHEN c.user_from_name <> ? THEN c.user_from_name " +
+            "ELSE c.user_to_name " +
             "END AS id," +
             "c.chat_id," +
-            "c.user_from_id," +
-            "c.user_to_id," +
+            "c.user_from_name," +
+            "c.user_to_name," +
             "c.message," +
             "c.send_on " +
             "FROM " +
