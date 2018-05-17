@@ -13,7 +13,7 @@ CREATE TABLE user (
 );
 
 INSERT INTO musclr_chat.user VALUES(
-'5af8532a08dfd90184cabd24', 'Roméo', 'Roméo@gmail.com', '123456', 'Chris.jpeg'
+'5af8532a08dfd90184cabd24', 'Rom\u00e9o', 'Rom\u00e9o@gmail.com', '123456', 'Chris.jpeg'
 );
 INSERT INTO musclr_chat.user VALUES(
 '5af84f93bfc2682f887fb0ee', 'Julia', 'Julia@gmail.com', '123456', 'Scarlett.jpg'
