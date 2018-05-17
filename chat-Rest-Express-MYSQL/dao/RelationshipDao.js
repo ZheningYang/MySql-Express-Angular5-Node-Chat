@@ -12,11 +12,11 @@ let Relationship = {
     getFriendsListByUserId: function (id, callback) {
         return db.query(
             "SELECT DISTINCT " +
-                "u.user_id, u.username, u.email, u.password, u.image_path " +
+                "u._id, u.username, u.email, u.password, u.image " +
             "FROM " +
             "relationship r " +
                 "INNER JOIN " +
-            "user u ON u.user_id IN (SELECT " +
+            "user u ON u._id IN (SELECT " +
                 "CASE " +
                     "WHEN user_one_id <> ? " +
                     "THEN user_one_id " +
@@ -27,26 +27,6 @@ let Relationship = {
             "WHERE " +
                 "(user_one_id = ? OR user_two_id = ?) " +
                     "AND status = 'accepted')", [id, id, id], callback);
-    },
-
-    getFriendsListByUsername: function (username, callback) {
-        return db.query(
-            "SELECT DISTINCT " +
-                "u._id, u.username, u.email, u.password, u.image_path " +
-            "FROM " +
-            "relationship r " +
-                "INNER JOIN " +
-            "user u ON u.username IN (SELECT " +
-                "CASE " +
-                    "WHEN user_one_name <> ? " +
-                    "THEN user_one_name " +
-                    "ELSE user_two_name " +
-                "END " +
-            "FROM " +
-                "relationship r " +
-            "WHERE " +
-                "(user_one_name = ? OR user_two_name = ?) " +
-                    "AND status = 'accepted')", [username, username, username], callback);
     },
 
 };

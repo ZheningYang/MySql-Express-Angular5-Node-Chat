@@ -50,6 +50,6 @@ let http = require('http').Server(app);
 // });
 
 // serveur du socket http://localhost:5000
-http.listen(5000,"0.0.0.0", function () {
-    console.log('started on port 5000');
+http.listen(3010,"0.0.0.0", function () {
+    console.log('started on port 3010');
 });

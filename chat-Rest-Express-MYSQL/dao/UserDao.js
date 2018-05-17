@@ -1,8 +1,8 @@
 let db = require('../dbconnection');
 
 let User = {
-    addUser: function (username, email, password, image_path, callback) {
-        return db.query("INSERT INTO user (username, email, password, image_path) VALUES (?,?,?,?)", [username, email, password, image_path], callback);
+    addUser: function (username, email, password, image, callback) {
+        return db.query("INSERT INTO user (username, email, password, image) VALUES (?,?,?,?)", [username, email, password, image], callback);
     },
     getAllUsers: function (callback) {
         return db.query("SELECT * FROM user", callback);
@@ -12,13 +12,13 @@ let User = {
 
     },
     getUserById: function (id, callback) {
-        return db.query("SELECT * FROM user WHERE user_id = ?", [id], callback);
+        return db.query("SELECT * FROM user WHERE _id = ?", [id], callback);
     },
     deleteUserById: function (id, callback) {
-        return db.query("DELETE FROM user WHERE user_id = ?", [id], callback);
+        return db.query("DELETE FROM user WHERE _id = ?", [id], callback);
     },
-    updateUserById: function (username, email, password, image_path, id) {
-        return db.query("UPDATE user SET username = ? , email = ?, password = ?  image_path = ? WHERE user_id = ?", [username, email, password, image_path, id], callback);
+    updateUserById: function (username, email, password, image, id) {
+        return db.query("UPDATE user SET username = ? , email = ?, password = ?  image = ? WHERE _id = ?", [username, email, password, image, id], callback);
 
     }
 };
